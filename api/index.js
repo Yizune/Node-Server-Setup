@@ -3,11 +3,11 @@ const serverless = require('serverless-http');
 const cors = require('cors');
 
 const app = express();
-const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path
+// const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path
 
 app.use(cors());
 app.use(express.json());
-app.use('/objects', objectsRoutes);
+// app.use('/objects', objectsRoutes);
 
 // 👇 Add a simple test route for "/"
 app.get('/', (req, res) => {
