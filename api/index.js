@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const serverless = require('serverless-http');  // Import serverless-http
+const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path  // Import serverless-http
 
 const app = express();
 const objectsRoutes = require('../routes/objectsRoutes');
@@ -13,4 +13,5 @@ app.use(express.json());
 app.use('/objects', objectsRoutes);
 
 // Wrap your express app for serverless
+module.exports = app; // Optional for local dev
 module.exports.handler = serverless(app); // Export the handler for serverless
