@@ -1,7 +1,7 @@
 const express = require('express');
 const serverless = require('serverless-http');
 const cors = require('cors');
-const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path
+const objectsRoutes = require('../routes/objectsRoutes'); // ← FIXED path
 
 const app = express();
 // const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path
