@@ -3,7 +3,6 @@ const cors = require('cors');
 const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path  // Import serverless-http
 
 const app = express();
-const objectsRoutes = require('../routes/objectsRoutes');
 
 // Set up CORS
 app.use(cors());
