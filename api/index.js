@@ -1,16 +1,23 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const cors = require('cors');
-const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path  // Import serverless-http
 
 const app = express();
+const objectsRoutes = require('./routes/objectsRoutes'); // ← FIXED path
 
-// Set up CORS
 app.use(cors());
 app.use(express.json());
-
-// Add your routes
 app.use('/objects', objectsRoutes);
 
-// Wrap your express app for serverless
+// 👇 Add a simple test route for "/"
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'API is live on Vercel!',
+    endpoints: ['/objects'],
+    status: 'OK'
+  });
+});
+
+// Export for Vercel serverless
 module.exports = app; // Optional for local dev
-module.exports.handler = serverless(app); // Export the handler for serverless
+module.exports.handler = serverless(app);
