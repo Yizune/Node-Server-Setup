@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 5001;
-const objectsRoutes = require('./routes/objectsRoutes');
+const objectsRoutes = require('../routes/objectsRoutes');
 
 // and now am not gonna lie at all i needed to add this cors stuff and i have no clue what it is
 //i tried reading about it and i don't understand at all
